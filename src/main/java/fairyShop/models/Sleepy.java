@@ -7,4 +7,13 @@ public class Sleepy extends BaseHelper{
     public Sleepy(String name) {
         super(name, ENERGY);
     }
+
+    @Override
+    public void work() {
+        if (getEnergy() - 5 < 0) {
+            setEnergy(0);
+        } else {
+            setEnergy(getEnergy() - 5);
+        }
+    }
 }
