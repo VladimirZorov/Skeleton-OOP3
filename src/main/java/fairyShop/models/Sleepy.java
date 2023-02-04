@@ -3,6 +3,7 @@ package fairyShop.models;
 public class Sleepy extends BaseHelper{
 
     private static final int ENERGY = 50;
+    private int energy;
 
     public Sleepy(String name) {
         super(name, ENERGY);
@@ -10,10 +11,10 @@ public class Sleepy extends BaseHelper{
 
     @Override
     public void work() {
-        if (getEnergy() - 5 < 0) {
-            setEnergy(0);
+        if (energy - 15 < 0) {
+            energy = 0;
         } else {
-            setEnergy(getEnergy() - 5);
+            energy -= 15;
         }
     }
 }

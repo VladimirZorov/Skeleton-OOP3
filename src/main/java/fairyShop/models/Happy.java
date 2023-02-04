@@ -8,12 +8,5 @@ private static final int ENERGY = 100;
         super(name, ENERGY);
     }
 
-    @Override
-    public void work() {
-        if (getEnergy() - 10 < 0) {
-            setEnergy(0);
-        } else {
-            setEnergy(getEnergy()-10);
-        }
-    }
+
 }

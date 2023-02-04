@@ -14,7 +14,7 @@ public abstract class BaseHelper implements Helper {
 
     public BaseHelper(String name, int energy) {
         this.setName(name);
-        this.setEnergy(energy);
+        this.energy = energy;
         this.instruments = new ArrayList<>();
     }
 
@@ -25,8 +25,13 @@ public abstract class BaseHelper implements Helper {
         this.name = name;
     }
 
-    public void setEnergy(int energy) {
-        this.energy = energy;
+    @Override
+    public void work() {
+        if (energy - 10 < 0) {
+            energy = 0;
+        } else {
+            energy -= 10;
+        }
     }
 
     @Override
